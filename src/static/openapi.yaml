@@ -15,45 +15,6 @@ servers:
     description: Azure runtime
 
 paths:
-  /books:
-    get:
-      tags:
-        - book
-      summary: Finds all books
-      description: Return all books
-      operationId: getBooks
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Book'
-    
-    post:
-      tags:
-        - book
-      summary: Store new book
-      description: ""
-      operationId: storeBook
-      requestBody:
-        required: true
-        description: New book object
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BookData'
-      responses:
-        '201':
-          description: Created
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Book'
-                  
   /books/{id}:
     get:
       tags:
@@ -80,60 +41,7 @@ paths:
           description: Bad request
         '404':
           description: Not found
-    put:
-      tags:
-        - book
-      summary: Update existing book
-      description: ""
-      operationId: updateBook
-      parameters:
-        - in: path
-          name: id
-          schema:
-            type: integer
-          required: true
-          description: Book id
-      requestBody:
-        required: true
-        description: Book to update
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BookData'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Book'
-        '400':
-          description: Bad request
-        '404':
-          description: Not found
-          
-    delete:
-      tags:
-        - book
-      summary: Delete existing book
-      description: ""
-      operationId: deleteBook
-      parameters:
-        - in: path
-          name: id
-          schema:
-            type: integer
-          required: true
-          description: Book id
-      responses:
-        '204':
-          description: No content
-        '400':
-          description: Bad request
-        '404':
-          description: Not found
-              
+
 components:
   schemas:
     Book:
