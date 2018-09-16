@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "60fae3a4-4fa5-47c1-bb7c-f153f415427e",
+		"_postman_id": "b69c66d2-fdf4-440a-b990-1c0f1ee44c04",
 		"name": "API Workshop",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -25,7 +25,29 @@
 						"books"
 					]
 				}
-			}
+			},
+			"response": []
+		},
+		{
+			"name": "Get book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/books/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
 		},
 		{
 			"name": "Add book",
@@ -52,7 +74,8 @@
 						"books"
 					]
 				}
-			}
+			},
+			"response": []
 		},
 		{
 			"name": "Delete book",
@@ -75,7 +98,8 @@
 						"2"
 					]
 				}
-			}
+			},
+			"response": []
 		},
 		{
 			"name": "Update book",
@@ -103,7 +127,8 @@
 						"1"
 					]
 				}
-			}
+			},
+			"response": []
 		}
 	]
 }
