@@ -39,7 +39,7 @@ const logger = createLogger({
         transports: [
             new transports.Console({format: consoleFormat}),
             new transports.File({
-                    filename: path.join(__dirname, 'server.log'),
+                    filename: path.join(__dirname, 'log', 'server.log'),
                     format: logFileFormat
                 })
         ]
