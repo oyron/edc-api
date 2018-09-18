@@ -25,9 +25,9 @@ https://github.com/openapitools/openapi-generator#33---online-openapi-generator
 From src directory:
 ```
 docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate \
-    -i /local/static/openapi.yaml \
+    -i /local/oas/openapi.yaml \
     -g html \
-    -o /local/static
+    -o /local/static/api-docs/openapi-generator
 ```
 
 ## Azure deployment
