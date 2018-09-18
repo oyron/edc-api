@@ -1,0 +1,160 @@
+swagger: '2.0'
+info:
+  description: Library API - EDC API Workshop
+  version: 1.0.0
+  title: Library API
+  contact:
+    email: oyron@equinor.com
+host: 'omniadev.azure-api.net'
+basePath: /edc-library
+tags:
+  - name: library
+    description: A library of books
+schemes:
+  - https
+security:
+  - APIKeyHeader: []
+paths:
+  /books:
+    get:
+      tags:
+        - library
+      summary: Finds all books
+      description: Return all books
+      operationId: getBooks
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Book'
+              
+    post:
+      tags:
+        - library
+      summary: Add a new book to the library
+      description: ''
+      operationId: addBook
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: bookData object that needs to be added to the library
+          required: true
+          schema:
+            $ref: '#/definitions/BookData'
+      responses:
+        '201':
+          description: Created
+          schema:
+            items:
+              $ref: '#/definitions/Book'
+              
+  '/books/{id}':
+    get:
+      tags:
+        - library
+      summary: Get book
+      description: ''
+      operationId: getBook
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: Book id
+          type: integer
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/Book'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+          
+    put:
+      tags:
+        - library
+      summary: Update existing book
+      description: ''
+      operationId: updateBook
+      parameters:
+        - name: id
+          in: path
+          description: Book id
+          type: integer
+          required: true
+        - name: body
+          in: body
+          description: bookData object that needs to be added to the library
+          required: true
+          schema:
+            $ref: '#/definitions/BookData'
+      responses:
+        '200':
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/Book'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+          
+    delete:
+      tags:
+        - library
+      summary: Delete existing book
+      description: ''
+      operationId: deleteBook
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+          description: Book id
+      responses:
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+          
+definitions:
+  Book:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      author:
+        type: string
+  BookData:
+    type: object
+    properties:
+      name:
+        type: string
+      author:
+        type: string
+        
+securityDefinitions:
+  APIKeyHeader:
+    type: apiKey
+    in: header
+    name: Ocp-Apim-Subscription-Key
+        
+externalDocs:
+  description: API documentation
+  url: https://edc-api-oyron.azurewebsites.net

@@ -1,4 +1,4 @@
-# EDC 2018 - API Workshop
+# API Workshop - EDC 2018
 
 Link to slides: https://oyron.github.io/edc-api-slides/
 
@@ -10,6 +10,27 @@ Link to slides: https://oyron.github.io/edc-api-slides/
 - Install `nodemon`: https://nodemon.io/
 - Install Postman: 
 
+## Part 1
+
+**Create the Library API**
+
+Operations:
+- Get an existing book. Already implemented.
+- Get all books. Return an array of books.
+- Add a new book. Return the created book.
+- Update an existing book. Return the updated book.
+- Delete a book. Return nothing.
+
+Postman can be used for testing
+
+Relevant HTTP status codes:
+- 200 OK
+- 201 Created
+- 204 No content
+- 400 Bad request
+- 404 Not found
+
+For a complete list, see: https://github.com/oyron/edc-api#edc-2018-API-workshop
 
 ## Swagger Editor
 https://editor.swagger.io/
@@ -25,9 +46,9 @@ https://github.com/openapitools/openapi-generator#33---online-openapi-generator
 From src directory:
 ```
 docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate \
-    -i /local/static/openapi.yaml \
+    -i /local/oas/openapi.yaml \
     -g html \
-    -o /local/static
+    -o /local/static/api-docs/openapi-generator
 ```
 
 ## Azure deployment
