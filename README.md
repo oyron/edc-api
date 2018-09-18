@@ -31,16 +31,18 @@ Link to slides: https://oyron.github.io/edc-api-slides/
 
 ####Create the Library API
 
-Check out branch `part1` by running `git checkout part1` 
+Check out branch `part1` by running `git checkout part1`
 
-Run the API skeleton (from src directory): `nodemon server.js`
+Run `npm install` from directory `src` to download dependencies.
+
+Run the API skeleton from directory `src`: `nodemon server.js`
 
 Operations:
-- Get an existing book. Already implemented.
-- Get all books. Return an array of books.
-- Add a new book. Return the created book.
-- Update an existing book. Return the updated book.
-- Delete a book. Return nothing.
+- **Get an existing book.** Already implemented.
+- **Get all books.** Return a list of books.
+- **Add a new book.** Return the created book.
+- **Update an existing book.** Return the updated book.
+- **Delete a book.** Return nothing.
 
 Use Postman for testing. Import the collection file in the `postman` folder into Postman. 
 
@@ -55,15 +57,14 @@ For a complete list, see: https://github.com/oyron/edc-api#edc-2018-API-workshop
 
 ## Part 2
 
-####Document the API with Swagger
+####Document the Library API with Swagger
 
-Use https://editor.swagger.io/
+Use https://editor.swagger.io/<br>
 Or run locally using Docker: `docker run -p 8080:8080 --name swagger-editor swaggerapi/swagger-editor`
 
-
-Open the skeleton Swagger file `src/oas/swagger.yaml` in the editor.
-Add the missing endpoints to the Swagger file.
-Test running the endpoints from the Swagger editor.
+- Open the skeleton Swagger file `src/oas/swagger.yaml` in the editor.
+- Add the missing endpoints to the Swagger file. Make sure the yaml is valid.
+- Test running the endpoints from the Swagger editor.
 
 ### Part 2B - Generate documentation
 
