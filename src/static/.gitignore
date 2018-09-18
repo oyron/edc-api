@@ -1,2 +1,6 @@
-.openapi-generator-ignore
-.openapi-generator/
+./openapi-generator/.openapi-generator-ignore
+./openapi-generator/.openapi-generator/
+
+./swagger-codegen/.swagger-codegen-ignore
+./swagger-codegen/.swagger-codegen/
+./swagger-codegen/VERSION
