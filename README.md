@@ -1,14 +1,31 @@
 # API Workshop - EDC 2018
 
+The workshop has 4 parts:
+1. Intro to API development, using Node.js
+2. Intro to API specification with Swagger
+3. API deployment in Azure, with Azure Web app
+4. Bonus task: Deploying the API to Azure API Management
+
 Link to slides: https://oyron.github.io/edc-api-slides/
 
 ## Prerequisites
-- Install Node.js
-  - [Via package manager](https://nodejs.org/en/download/package-manager)
-  - [Download](https://nodejs.org/en/download/)
-- Install [nodemon](https://nodemon.io/)
-- Install [Postman](https://www.getpostman.com/)
-- Clone GitHub repo
+
+- **For ALL parts**
+  - GitHub repo cloned
+  - [Postman](https://www.getpostman.com/) Installed
+- **Intro to API development, using Node.js**
+  - Basic understanding of JavaScript
+  - Node.js installed
+    - [Via package manager](https://nodejs.org/en/download/package-manager)
+    - [Download](https://nodejs.org/en/download/)
+  - [Nodemon](https://nodemon.io/) installed
+- **Intro to API specification with Swagger**
+  - No particular prerequisites. Basic understanding of Swagger / OpenAPI spec is an advantage.
+- **API deployment in Azure, with Azure Web app**
+  - Access to an Azure Resource Group
+- **Deploying the API to Azure API Management**
+  - Access to Azure API Management
+
 
 ## Part 1
 
@@ -115,11 +132,4 @@ Also change `scheme` to `https`. Export the file as JSON (APIM currently does no
 3. After creating the API, go to settings, add "EDC API Workshop" as a product
 
 4. Verify that you are able to call the API through APIM by using Postman (make sure you are accessing the APIM Url) 
-
-
-
-
-
-
-
 
