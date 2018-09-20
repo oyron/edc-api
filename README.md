@@ -1,41 +1,29 @@
 # API Workshop - EDC 2018
 
 The workshop has 4 parts:
-1. Intro to API development, using Node.js
+1. Intro to REST API development, using Node.js
 2. Intro to API specification with Swagger
-3. API deployment in Azure, with Azure Web app
+3. API deployment in Azure, with Azure Web Apps
 4. Bonus task: Deploying the API to Azure API Management
 
 Link to slides: https://oyron.github.io/edc-api-slides/
 
 ## Prerequisites
 
-- **For ALL parts**
-  - GitHub repo cloned
-  - [Postman](https://www.getpostman.com/) Installed
-- **Intro to API development, using Node.js**
-  - Basic understanding of JavaScript
-  - Node.js installed
+- Node.js installed
     - [Via package manager](https://nodejs.org/en/download/package-manager)
     - [Download](https://nodejs.org/en/download/)
-  - [Nodemon](https://nodemon.io/) installed
-- **Intro to API specification with Swagger**
-  - No particular prerequisites. Basic understanding of Swagger / OpenAPI spec is an advantage.
-- **API deployment in Azure, with Azure Web app**
-  - Access to an Azure Resource Group
-- **Deploying the API to Azure API Management**
-  - Access to Azure API Management
+- [Postman](https://www.getpostman.com/) Installed
 
+## Getting started
+See [getting started info](https://github.com/oyron/edc-api/blob/master/gettingStarted.md).
 
 ## Part 1
 
 ####Create the Library API
 
-Check out branch `part1` by running `git checkout part1`
-
-Run `npm install` from directory `src` to download dependencies.
-
-Run the API skeleton from directory `src`: `nodemon server.js`
+Use branch `part1`. Run the server: `nodemon server.js`.
+Make sure the server is running by accessing http://localhost:3000
 
 Operations:
 - **Get an existing book.** Already implemented.
@@ -52,6 +40,7 @@ Relevant HTTP status codes:
 - 204 No content
 - 400 Bad request
 - 404 Not found
+- 500 Internal Server Error
 
 For a complete list, see: https://github.com/oyron/edc-api#edc-2018-API-workshop
 
@@ -61,6 +50,8 @@ For a complete list, see: https://github.com/oyron/edc-api#edc-2018-API-workshop
 
 Use https://editor.swagger.io/<br>
 Or run locally using Docker: `docker run -p 8080:8080 --name swagger-editor swaggerapi/swagger-editor`
+
+Swagger specification: https://swagger.io/specification/v2/
 
 - Open the skeleton Swagger file `src/oas/swagger.yaml` in the editor.
 - Add the missing endpoints to the Swagger file. Make sure the yaml is valid.
@@ -95,8 +86,9 @@ Make sure you have access to a resource group in the VanDamme subscription befor
 **Procedure:**
 
 1. Create Azure Web App
-  - Subscription: VanDamme, NodeJS, Linux Web App
-  - Resource Group: <Personal resource group>
+  - App name: library-<user name>
+  - Subscription: VanDamme
+  - Resource Group (Use Existing): APIWorkshop
   - OS: Linux
   - App Service Plan - Create new:
     - Location: North Europe
