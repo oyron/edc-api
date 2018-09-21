@@ -20,21 +20,30 @@ See [getting started info](https://github.com/oyron/edc-api/blob/master/gettingS
 
 ## Part 1
 
-####Create the Library API
+#### Create the Library API
 
 Use branch `part1`. Run the server: `nodemon server.js`.
 Make sure the server is running by accessing http://localhost:3000
 
-Operations:
-- **Get an existing book.** Already implemented.
-- **Get all books.** Return a list of books.
+**The Library API**
+The API should support the operations listed below. Operations taking id as parameter should return an error message
+if the id does not exist. The API does not need to implement input validation.
+The API should support JSON as inpu 
+- **Get all books.** Return a list of books. *Already implemented.*
+- **Get an existing book (by id).** Return the requested book.
 - **Add a new book.** Return the created book.
-- **Update an existing book.** Return the updated book.
-- **Delete a book.** Return nothing.
+- **Update an existing book (by id).** Return the updated book.
+- **Delete a book (by id).** Return nothing.
 
 Use Postman for testing. Import the collection file in the `postman` folder into Postman. 
 
-Relevant HTTP status codes:
+**Relevant HTTP methods:**
+- GET
+- POST
+- PUT
+- DELETE
+
+**Relevant HTTP status codes:**
 - 200 OK
 - 201 Created
 - 204 No content
@@ -46,7 +55,7 @@ For a complete list, see: https://github.com/oyron/edc-api#edc-2018-API-workshop
 
 ## Part 2
 
-####Document the Library API with Swagger
+#### Document the Library API with Swagger
 
 Use https://editor.swagger.io/<br>
 Or run locally using Docker: `docker run -p 8080:8080 --name swagger-editor swaggerapi/swagger-editor`
@@ -79,13 +88,13 @@ Select Generate Client -> html2. Unzip and place in folder `src/static/api-docs`
 Browse the generated documentation.
 
 ## Part 3
-###Azure deployment
+### Azure deployment
 
-Make sure you have access to a resource group in the VanDamme subscription before you start.
+In this part we will deploy our Library API to Azure.
 
 **Procedure:**
 
-1. Create Azure Web App
+1. Create Azure Web App using the Azure portal: https://portal.azure.com
   - App name: library-<user name>
   - Subscription: VanDamme
   - Resource Group (Use Existing): APIWorkshop
@@ -105,13 +114,12 @@ Make sure you have access to a resource group in the VanDamme subscription befor
 
 5. Deploy: `git push azure master`
 
-6. Test accessing the API. Please note that startup after the initial deployment may take a couple of minutes.
+6. Test accessing the API.
 
 ## Part 4
-####API Management (Bonus task)
+#### API Management
 
-Make sure you have access to the API Management Dev Portal
-
+In this task we will add our API to Azure API Management.  
 
 1. Edit `swagger.yaml` in the Swagger editor and make the URL refer to your newly created service in Azure. 
 Also change `scheme` to `https`. Export the file as JSON (APIM currently does not support YAML).
