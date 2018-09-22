@@ -8,7 +8,7 @@
       "email": "oyron@equinor.com"
     }
   },
-  "host": "edc-api-oyron.azurewebsites.net",
+  "host": "library-oyron.azurewebsites.net",
   "basePath": "/api",
   "tags": [
     {
@@ -217,6 +217,6 @@
   },
   "externalDocs": {
     "description": "API documentation",
-    "url": "https://edc-api-oyron.azurewebsites.net"
+    "url": "https://library-oyron.azurewebsites.net"
   }
 }
