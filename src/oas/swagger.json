@@ -1,23 +1,23 @@
 {
   "swagger": "2.0",
   "info": {
+    "title": "Library API",
     "description": "Library API - EDC API Workshop",
     "version": "1.0.0",
-    "title": "Library API",
     "contact": {
       "email": "oyron@equinor.com"
     }
   },
   "host": "library-oyron.azurewebsites.net",
   "basePath": "/api",
+  "schemes": [
+    "https"
+  ],
   "tags": [
     {
       "name": "library",
       "description": "A library of books"
     }
-  ],
-  "schemes": [
-    "https"
   ],
   "paths": {
     "/books": {
@@ -25,9 +25,7 @@
         "tags": [
           "library"
         ],
-        "summary": "Finds all books",
-        "description": "Return all books",
-        "operationId": "getBooks",
+        "summary": "Return all books",
         "produces": [
           "application/json"
         ],
@@ -48,8 +46,6 @@
           "library"
         ],
         "summary": "Add a new book to the library",
-        "description": "",
-        "operationId": "addBook",
         "consumes": [
           "application/json"
         ],
@@ -85,10 +81,9 @@
           "library"
         ],
         "summary": "Get book",
-        "description": "",
-        "operationId": "getBook",
         "produces": [
-          "application/json"
+          "application/json",
+          "text/html"
         ],
         "parameters": [
           {
@@ -121,8 +116,10 @@
           "library"
         ],
         "summary": "Update existing book",
-        "description": "",
-        "operationId": "updateBook",
+        "produces": [
+          "application/json",
+          "text/html"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -134,7 +131,7 @@
           {
             "name": "body",
             "in": "body",
-            "description": "bookData object that needs to be added to the library",
+            "description": "book data to be updated in library",
             "required": true,
             "schema": {
               "$ref": "#/definitions/BookData"
@@ -163,8 +160,9 @@
           "library"
         ],
         "summary": "Delete existing book",
-        "description": "",
-        "operationId": "deleteBook",
+        "produces": [
+          "text/html"
+        ],
         "parameters": [
           {
             "in": "path",
