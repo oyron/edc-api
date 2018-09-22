@@ -4,7 +4,7 @@ The workshop has 4 parts:
 1. Intro to REST API development, using Node.js
 2. Intro to API specification with Swagger
 3. API deployment in Azure, with Azure Web Apps
-4. Bonus task: Deploying the API to Azure API Management
+4. Deploying the API to Azure API Management
 
 Link to slides: https://oyron.github.io/edc-api-slides/
 
@@ -14,21 +14,22 @@ Link to slides: https://oyron.github.io/edc-api-slides/
     - [Via package manager](https://nodejs.org/en/download/package-manager)
     - [Download](https://nodejs.org/en/download/)
 - [Postman](https://www.getpostman.com/) Installed
+- [Data Platform Developer](https://accessit.statoil.no/Search/Search?term=data+platform+developer) role in AccessIT
 
 ## Getting started
 See [getting started info](https://github.com/oyron/edc-api/blob/master/gettingStarted.md).
 
 ## Part 1
 
-#### Create the Library API
+### Create the Library API
 
 Use branch `part1`. Run the server: `nodemon server.js`.
 Make sure the server is running by accessing http://localhost:3000
 
 **The Library API**
+
 The API should support the operations listed below. Operations taking id as parameter should return an error message
-if the id does not exist. The API does not need to implement input validation.
-The API should support JSON as inpu 
+if the id does not exist. The API should support JSON as data format. Input validation is not necessary. 
 - **Get all books.** Return a list of books. *Already implemented.*
 - **Get an existing book (by id).** Return the requested book.
 - **Add a new book.** Return the created book.
@@ -51,11 +52,11 @@ Use Postman for testing. Import the collection file in the `postman` folder into
 - 404 Not found
 - 500 Internal Server Error
 
-For a complete list, see: https://github.com/oyron/edc-api#edc-2018-API-workshop
+For a complete list, see: https://www.restapitutorial.com/httpstatuscodes.html
 
 ## Part 2
 
-#### Document the Library API with Swagger
+### Document the Library API with Swagger
 
 Use https://editor.swagger.io/<br>
 Or run locally using Docker: `docker run -p 8080:8080 --name swagger-editor swaggerapi/swagger-editor`
@@ -117,7 +118,7 @@ In this part we will deploy our Library API to Azure.
 6. Test accessing the API.
 
 ## Part 4
-#### API Management
+### API Management
 
 In this task we will add our API to Azure API Management.  
 
