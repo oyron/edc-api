@@ -19,8 +19,8 @@ class Library {
     }
 
     addBook(book) {
-        book.id = this.uid++;
-        this.books.set(book.id, book);
+        const id = this.uid++;
+        this.books.set(id, {id, title: book.title, author: book.author});
         return book;
     }
 

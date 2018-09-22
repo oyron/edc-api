@@ -7,23 +7,18 @@ const Library = require("./library");
 
 
 router.all('*', logRequest);
-router.get('/books/:id', getBook);
-// ADD ENDPOINTS HERE
+router.get('/books', getBooks);
+
+// Add endpoints here:
+
 router.use(unknownUrlHandler);
 router.use(errorHandler);
 
 const library = new Library();
 
-function getBook(req, res) {
-    const bookId = Number(req.params.id);
-    if (library.hasBookId(bookId)) {
-        res.send(library.getBook(bookId));
-    }
-    else {
-        res.status(404).send(`Book with id ${bookId} not found`);
-    }
+function getBooks(req, res) {
+    res.send(library.getAllBooks());
 }
-
 
 function logRequest(req, res, next) {
     let payloadLog = "";
