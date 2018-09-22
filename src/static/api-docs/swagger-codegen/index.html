@@ -738,20 +738,20 @@ margin-bottom: 20px;
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
                   <li class="nav-header" data-group="Library"><a href="#api-Library">API Methods - Library</a></li>
-                    <li data-group="Library" data-name="addBook" class="">
-                      <a href="#api-Library-addBook">addBook</a>
+                    <li data-group="Library" data-name="booksGet" class="">
+                      <a href="#api-Library-booksGet">booksGet</a>
                     </li>
-                    <li data-group="Library" data-name="deleteBook" class="">
-                      <a href="#api-Library-deleteBook">deleteBook</a>
+                    <li data-group="Library" data-name="booksIdDelete" class="">
+                      <a href="#api-Library-booksIdDelete">booksIdDelete</a>
                     </li>
-                    <li data-group="Library" data-name="getBook" class="">
-                      <a href="#api-Library-getBook">getBook</a>
+                    <li data-group="Library" data-name="booksIdGet" class="">
+                      <a href="#api-Library-booksIdGet">booksIdGet</a>
                     </li>
-                    <li data-group="Library" data-name="getBooks" class="">
-                      <a href="#api-Library-getBooks">getBooks</a>
+                    <li data-group="Library" data-name="booksIdPut" class="">
+                      <a href="#api-Library-booksIdPut">booksIdPut</a>
                     </li>
-                    <li data-group="Library" data-name="updateBook" class="">
-                      <a href="#api-Library-updateBook">updateBook</a>
+                    <li data-group="Library" data-name="booksPost" class="">
+                      <a href="#api-Library-booksPost">booksPost</a>
                     </li>
           </ul>
         </nav>
@@ -774,11 +774,11 @@ margin-bottom: 20px;
         <div id="sections">
                 <section id="api-Library">
                   <h1>Library</h1>
-                    <div id="api-Library-addBook">
-                      <article id="api-Library-addBook-0" data-group="User" data-name="addBook" data-version="0">
+                    <div id="api-Library-booksGet">
+                      <article id="api-Library-booksGet-0" data-group="User" data-name="booksGet" data-version="0">
                         <div class="pull-left">
-                          <h1>addBook</h1>
-                          <p>Add a new book to the library</p>
+                          <h1>booksGet</h1>
+                          <p>Return all books</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
@@ -786,29 +786,29 @@ margin-bottom: 20px;
                         <p class="marked"></p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/books</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/books</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Library-addBook-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Library-addBook-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Library-addBook-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Library-addBook-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Library-addBook-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Library-addBook-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Library-addBook-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Library-addBook-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Library-addBook-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Library-addBook-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Library-addBook-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Library-booksGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Library-booksGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Library-booksGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Library-booksGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Library-booksGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Library-booksGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Library-booksGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Library-booksGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Library-booksGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Library-booksGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Library-booksGet-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Library-addBook-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:3000/api/books"</code></pre>
+                          <div class="tab-pane active" id="examples-Library-booksGet-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:3000/api/books"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Library-addBook-0-java">
+                          <div class="tab-pane" id="examples-Library-booksGet-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -822,46 +822,48 @@ public class LibraryApiExample {
     public static void main(String[] args) {
         
         LibraryApi apiInstance = new LibraryApi();
-        BookData body = ; // BookData | bookData object that needs to be added to the library
         try {
-            apiInstance.addBook(body);
+            array[Book] result = apiInstance.booksGet();
+            System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LibraryApi#addBook");
+            System.err.println("Exception when calling LibraryApi#booksGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Library-addBook-0-android">
+                          <div class="tab-pane" id="examples-Library-booksGet-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.LibraryApi;
 
 public class LibraryApiExample {
 
     public static void main(String[] args) {
         LibraryApi apiInstance = new LibraryApi();
-        BookData body = ; // BookData | bookData object that needs to be added to the library
         try {
-            apiInstance.addBook(body);
+            array[Book] result = apiInstance.booksGet();
+            System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LibraryApi#addBook");
+            System.err.println("Exception when calling LibraryApi#booksGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Library-addBook-0-groovy">
+  <div class="tab-pane" id="examples-Library-booksGet-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Library-addBook-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">BookData *body = ; // bookData object that needs to be added to the library
-
+                            <div class="tab-pane" id="examples-Library-booksGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
 LibraryApi *apiInstance = [[LibraryApi alloc] init];
 
-// Add a new book to the library
-[apiInstance addBookWith:body
-              completionHandler: ^(NSError* error) {
+// Return all books
+[apiInstance booksGetWithCompletionHandler: 
+              ^(array[Book] output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
                             if (error) {
                                 NSLog(@"Error: %@", error);
                             }
@@ -869,29 +871,26 @@ LibraryApi *apiInstance = [[LibraryApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-addBook-0-javascript">
+                            <div class="tab-pane" id="examples-Library-booksGet-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var LibraryApi = require('library_api');
 
 var api = new LibraryApi.LibraryApi()
-
-var body = ; // {BookData} bookData object that needs to be added to the library
-
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.addBook(body, callback);
+api.booksGet(callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Library-addBook-0-angular">
+                            <!--<div class="tab-pane" id="examples-Library-booksGet-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Library-addBook-0-csharp">
+                            <div class="tab-pane" id="examples-Library-booksGet-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -900,22 +899,22 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class addBookExample
+    public class booksGetExample
     {
         public void main()
         {
             
             var apiInstance = new LibraryApi();
-            var body = new BookData(); // BookData | bookData object that needs to be added to the library
 
             try
             {
-                // Add a new book to the library
-                apiInstance.addBook(body);
+                // Return all books
+                array[Book] result = apiInstance.booksGet();
+                Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling LibraryApi.addBook: " + e.Message );
+                Debug.Print("Exception when calling LibraryApi.booksGet: " + e.Message );
             }
         }
     }
@@ -923,38 +922,38 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-addBook-0-php">
+                            <div class="tab-pane" id="examples-Library-booksGet-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\LibraryApi();
-$body = ; // BookData | bookData object that needs to be added to the library
 
 try {
-    $api_instance->addBook($body);
+    $result = $api_instance->booksGet();
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LibraryApi->addBook: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LibraryApi->booksGet: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-addBook-0-perl">
+                            <div class="tab-pane" id="examples-Library-booksGet-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::LibraryApi;
 
 my $api_instance = WWW::SwaggerClient::LibraryApi->new();
-my $body = WWW::SwaggerClient::Object::BookData->new(); # BookData | bookData object that needs to be added to the library
 
 eval { 
-    $api_instance->addBook(body => $body);
+    my $result = $api_instance->booksGet();
+    print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LibraryApi->addBook: $@\n";
+    warn "Exception when calling LibraryApi->booksGet: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-addBook-0-python">
+                            <div class="tab-pane" id="examples-Library-booksGet-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -963,13 +962,13 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.LibraryApi()
-body =  # BookData | bookData object that needs to be added to the library
 
 try: 
-    # Add a new book to the library
-    api_instance.add_book(body)
+    # Return all books
+    api_response = api_instance.books_get()
+    pprint(api_response)
 except ApiException as e:
-    print("Exception when calling LibraryApi->addBook: %s\n" % e)</code></pre>
+    print("Exception when calling LibraryApi->booksGet: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -977,67 +976,63 @@ except ApiException as e:
 
 
 
-                            <div class="methodsubtabletitle">Body parameters</div>
-                            <table id="methodsubtable">
-                              <tr>
-                                <th width="150px">Name</th>
-                                <th>Description</th>
-                              </tr>
-                                <tr><td style="width:150px;">body <span style="color:red;">*</span></td>
-<td>
-
-
-<script>
-$(document).ready(function() {
-  var schemaWrapper = {
-  "in" : "body",
-  "name" : "body",
-  "description" : "bookData object that needs to be added to the library",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/BookData"
-  }
-};
-  var schema = schemaWrapper.schema;
-  if (schema.$ref != null) {
-    schema = defsParser.$refs.get(schema.$ref);
-  } else {
-    schemaWrapper.definitions = Object.assign({}, defs);
-    $RefParser.dereference(schemaWrapper).catch(function(err) {
-      console.log(err);
-    });
-  }
-
-  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
-  var result = $('#d2e199_addBook_body');
-  result.empty();
-  result.append(view.render());
-});
-</script>
-<div id="d2e199_addBook_body"></div>
-</td>
-</tr>
-
-                            </table>
 
 
 
                           <h2>Responses</h2>
-                            <h3> Status: 201 - Created </h3>
+                            <h3> Status: 200 - OK </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-booksGet-200-schema">Schema</a>
+                                </li>
+
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-booksGet-200-schema">
+                                  <div id='responses-booksGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "OK",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/Book"
+    }
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-booksGet-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-booksGet-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-booksGet-200-schema-data' type='hidden' value=''></input>
+                                </div>
                             </div>
 
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Library-deleteBook">
-                      <article id="api-Library-deleteBook-0" data-group="User" data-name="deleteBook" data-version="0">
+                    <div id="api-Library-booksIdDelete">
+                      <article id="api-Library-booksIdDelete-0" data-group="User" data-name="booksIdDelete" data-version="0">
                         <div class="pull-left">
-                          <h1>deleteBook</h1>
+                          <h1>booksIdDelete</h1>
                           <p>Delete existing book</p>
                         </div>
                         <div class="pull-right"></div>
@@ -1051,24 +1046,24 @@ $(document).ready(function() {
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Library-deleteBook-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Library-deleteBook-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Library-deleteBook-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Library-deleteBook-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Library-deleteBook-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Library-deleteBook-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Library-deleteBook-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Library-deleteBook-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Library-deleteBook-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Library-deleteBook-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Library-deleteBook-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Library-booksIdDelete-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Library-booksIdDelete-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Library-booksIdDelete-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Library-booksIdDelete-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Library-booksIdDelete-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Library-booksIdDelete-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Library-booksIdDelete-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Library-booksIdDelete-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Library-booksIdDelete-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Library-booksIdDelete-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Library-booksIdDelete-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Library-deleteBook-0-curl">
+                          <div class="tab-pane active" id="examples-Library-booksIdDelete-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X DELETE "http://localhost:3000/api/books/{id}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Library-deleteBook-0-java">
+                          <div class="tab-pane" id="examples-Library-booksIdDelete-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1084,16 +1079,16 @@ public class LibraryApiExample {
         LibraryApi apiInstance = new LibraryApi();
         Integer id = 56; // Integer | Book id
         try {
-            apiInstance.deleteBook(id);
+            apiInstance.booksIdDelete(id);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LibraryApi#deleteBook");
+            System.err.println("Exception when calling LibraryApi#booksIdDelete");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Library-deleteBook-0-android">
+                          <div class="tab-pane" id="examples-Library-booksIdDelete-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.LibraryApi;
 
 public class LibraryApiExample {
@@ -1102,25 +1097,25 @@ public class LibraryApiExample {
         LibraryApi apiInstance = new LibraryApi();
         Integer id = 56; // Integer | Book id
         try {
-            apiInstance.deleteBook(id);
+            apiInstance.booksIdDelete(id);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LibraryApi#deleteBook");
+            System.err.println("Exception when calling LibraryApi#booksIdDelete");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Library-deleteBook-0-groovy">
+  <div class="tab-pane" id="examples-Library-booksIdDelete-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Library-deleteBook-0-objc">
+                            <div class="tab-pane" id="examples-Library-booksIdDelete-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Integer *id = 56; // Book id
 
 LibraryApi *apiInstance = [[LibraryApi alloc] init];
 
 // Delete existing book
-[apiInstance deleteBookWith:id
+[apiInstance booksIdDeleteWith:id
               completionHandler: ^(NSError* error) {
                             if (error) {
                                 NSLog(@"Error: %@", error);
@@ -1129,7 +1124,7 @@ LibraryApi *apiInstance = [[LibraryApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-deleteBook-0-javascript">
+                            <div class="tab-pane" id="examples-Library-booksIdDelete-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var LibraryApi = require('library_api');
 
 var api = new LibraryApi.LibraryApi()
@@ -1144,14 +1139,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteBook(id, callback);
+api.booksIdDelete(id, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Library-deleteBook-0-angular">
+                            <!--<div class="tab-pane" id="examples-Library-booksIdDelete-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Library-deleteBook-0-csharp">
+                            <div class="tab-pane" id="examples-Library-booksIdDelete-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1160,7 +1155,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class deleteBookExample
+    public class booksIdDeleteExample
     {
         public void main()
         {
@@ -1171,11 +1166,11 @@ namespace Example
             try
             {
                 // Delete existing book
-                apiInstance.deleteBook(id);
+                apiInstance.booksIdDelete(id);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling LibraryApi.deleteBook: " + e.Message );
+                Debug.Print("Exception when calling LibraryApi.booksIdDelete: " + e.Message );
             }
         }
     }
@@ -1183,7 +1178,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-deleteBook-0-php">
+                            <div class="tab-pane" id="examples-Library-booksIdDelete-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -1191,14 +1186,14 @@ $api_instance = new Swagger\Client\Api\LibraryApi();
 $id = 56; // Integer | Book id
 
 try {
-    $api_instance->deleteBook($id);
+    $api_instance->booksIdDelete($id);
 } catch (Exception $e) {
-    echo 'Exception when calling LibraryApi->deleteBook: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LibraryApi->booksIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-deleteBook-0-perl">
+                            <div class="tab-pane" id="examples-Library-booksIdDelete-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::LibraryApi;
@@ -1207,14 +1202,14 @@ my $api_instance = WWW::SwaggerClient::LibraryApi->new();
 my $id = 56; # Integer | Book id
 
 eval { 
-    $api_instance->deleteBook(id => $id);
+    $api_instance->booksIdDelete(id => $id);
 };
 if ($@) {
-    warn "Exception when calling LibraryApi->deleteBook: $@\n";
+    warn "Exception when calling LibraryApi->booksIdDelete: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-deleteBook-0-python">
+                            <div class="tab-pane" id="examples-Library-booksIdDelete-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1227,9 +1222,9 @@ id = 56 # Integer | Book id
 
 try: 
     # Delete existing book
-    api_instance.delete_book(id)
+    api_instance.books_id_delete(id)
 except ApiException as e:
-    print("Exception when calling LibraryApi->deleteBook: %s\n" % e)</code></pre>
+    print("Exception when calling LibraryApi->booksIdDelete: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1245,7 +1240,7 @@ except ApiException as e:
 <td>
 
 
-    <div id="d2e199_deleteBook_id">
+    <div id="d2e199_booksIdDelete_id">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -1298,10 +1293,10 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Library-getBook">
-                      <article id="api-Library-getBook-0" data-group="User" data-name="getBook" data-version="0">
+                    <div id="api-Library-booksIdGet">
+                      <article id="api-Library-booksIdGet-0" data-group="User" data-name="booksIdGet" data-version="0">
                         <div class="pull-left">
-                          <h1>getBook</h1>
+                          <h1>booksIdGet</h1>
                           <p>Get book</p>
                         </div>
                         <div class="pull-right"></div>
@@ -1315,24 +1310,24 @@ except ApiException as e:
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Library-getBook-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Library-getBook-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Library-getBook-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Library-getBook-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Library-getBook-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Library-getBook-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Library-getBook-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Library-getBook-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Library-getBook-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Library-getBook-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Library-getBook-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Library-booksIdGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Library-booksIdGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Library-booksIdGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Library-booksIdGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Library-booksIdGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Library-booksIdGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Library-booksIdGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Library-booksIdGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Library-booksIdGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Library-booksIdGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Library-booksIdGet-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Library-getBook-0-curl">
+                          <div class="tab-pane active" id="examples-Library-booksIdGet-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:3000/api/books/{id}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Library-getBook-0-java">
+                          <div class="tab-pane" id="examples-Library-booksIdGet-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1348,16 +1343,16 @@ public class LibraryApiExample {
         LibraryApi apiInstance = new LibraryApi();
         Integer id = 56; // Integer | Book id
         try {
-            apiInstance.getBook(id);
+            apiInstance.booksIdGet(id);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LibraryApi#getBook");
+            System.err.println("Exception when calling LibraryApi#booksIdGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Library-getBook-0-android">
+                          <div class="tab-pane" id="examples-Library-booksIdGet-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.LibraryApi;
 
 public class LibraryApiExample {
@@ -1366,25 +1361,25 @@ public class LibraryApiExample {
         LibraryApi apiInstance = new LibraryApi();
         Integer id = 56; // Integer | Book id
         try {
-            apiInstance.getBook(id);
+            apiInstance.booksIdGet(id);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LibraryApi#getBook");
+            System.err.println("Exception when calling LibraryApi#booksIdGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Library-getBook-0-groovy">
+  <div class="tab-pane" id="examples-Library-booksIdGet-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Library-getBook-0-objc">
+                            <div class="tab-pane" id="examples-Library-booksIdGet-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Integer *id = 56; // Book id
 
 LibraryApi *apiInstance = [[LibraryApi alloc] init];
 
 // Get book
-[apiInstance getBookWith:id
+[apiInstance booksIdGetWith:id
               completionHandler: ^(NSError* error) {
                             if (error) {
                                 NSLog(@"Error: %@", error);
@@ -1393,7 +1388,7 @@ LibraryApi *apiInstance = [[LibraryApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-getBook-0-javascript">
+                            <div class="tab-pane" id="examples-Library-booksIdGet-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var LibraryApi = require('library_api');
 
 var api = new LibraryApi.LibraryApi()
@@ -1408,14 +1403,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getBook(id, callback);
+api.booksIdGet(id, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Library-getBook-0-angular">
+                            <!--<div class="tab-pane" id="examples-Library-booksIdGet-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Library-getBook-0-csharp">
+                            <div class="tab-pane" id="examples-Library-booksIdGet-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1424,7 +1419,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class getBookExample
+    public class booksIdGetExample
     {
         public void main()
         {
@@ -1435,11 +1430,11 @@ namespace Example
             try
             {
                 // Get book
-                apiInstance.getBook(id);
+                apiInstance.booksIdGet(id);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling LibraryApi.getBook: " + e.Message );
+                Debug.Print("Exception when calling LibraryApi.booksIdGet: " + e.Message );
             }
         }
     }
@@ -1447,7 +1442,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-getBook-0-php">
+                            <div class="tab-pane" id="examples-Library-booksIdGet-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -1455,14 +1450,14 @@ $api_instance = new Swagger\Client\Api\LibraryApi();
 $id = 56; // Integer | Book id
 
 try {
-    $api_instance->getBook($id);
+    $api_instance->booksIdGet($id);
 } catch (Exception $e) {
-    echo 'Exception when calling LibraryApi->getBook: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LibraryApi->booksIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-getBook-0-perl">
+                            <div class="tab-pane" id="examples-Library-booksIdGet-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::LibraryApi;
@@ -1471,14 +1466,14 @@ my $api_instance = WWW::SwaggerClient::LibraryApi->new();
 my $id = 56; # Integer | Book id
 
 eval { 
-    $api_instance->getBook(id => $id);
+    $api_instance->booksIdGet(id => $id);
 };
 if ($@) {
-    warn "Exception when calling LibraryApi->getBook: $@\n";
+    warn "Exception when calling LibraryApi->booksIdGet: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-getBook-0-python">
+                            <div class="tab-pane" id="examples-Library-booksIdGet-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1491,9 +1486,9 @@ id = 56 # Integer | Book id
 
 try: 
     # Get book
-    api_instance.get_book(id)
+    api_instance.books_id_get(id)
 except ApiException as e:
-    print("Exception when calling LibraryApi->getBook: %s\n" % e)</code></pre>
+    print("Exception when calling LibraryApi->booksIdGet: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1509,7 +1504,7 @@ except ApiException as e:
 <td>
 
 
-    <div id="d2e199_getBook_id">
+    <div id="d2e199_booksIdGet_id">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -1562,265 +1557,10 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Library-getBooks">
-                      <article id="api-Library-getBooks-0" data-group="User" data-name="getBooks" data-version="0">
+                    <div id="api-Library-booksIdPut">
+                      <article id="api-Library-booksIdPut-0" data-group="User" data-name="booksIdPut" data-version="0">
                         <div class="pull-left">
-                          <h1>getBooks</h1>
-                          <p>Finds all books</p>
-                        </div>
-                        <div class="pull-right"></div>
-                        <div class="clearfix"></div>
-                        <p></p>
-                        <p class="marked">Return all books</p>
-                        <p></p>
-                        <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/books</span></code></pre>
-                        <p>
-                          <h3>Usage and SDK Samples</h3>
-                        </p>
-                        <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Library-getBooks-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Library-getBooks-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Library-getBooks-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Library-getBooks-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Library-getBooks-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Library-getBooks-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Library-getBooks-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Library-getBooks-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Library-getBooks-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Library-getBooks-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Library-getBooks-0-python">Python</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Library-getBooks-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:3000/api/books"</code></pre>
-                          </div>
-                          <div class="tab-pane" id="examples-Library-getBooks-0-java">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.LibraryApi;
-
-import java.io.File;
-import java.util.*;
-
-public class LibraryApiExample {
-
-    public static void main(String[] args) {
-        
-        LibraryApi apiInstance = new LibraryApi();
-        try {
-            array[Book] result = apiInstance.getBooks();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LibraryApi#getBooks");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-
-                          <div class="tab-pane" id="examples-Library-getBooks-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.LibraryApi;
-
-public class LibraryApiExample {
-
-    public static void main(String[] args) {
-        LibraryApi apiInstance = new LibraryApi();
-        try {
-            array[Book] result = apiInstance.getBooks();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LibraryApi#getBooks");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-  <!--
-  <div class="tab-pane" id="examples-Library-getBooks-0-groovy">
-  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-  </div> -->
-                            <div class="tab-pane" id="examples-Library-getBooks-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">
-LibraryApi *apiInstance = [[LibraryApi alloc] init];
-
-// Finds all books
-[apiInstance getBooksWithCompletionHandler: 
-              ^(array[Book] output, NSError* error) {
-                            if (output) {
-                                NSLog(@"%@", output);
-                            }
-                            if (error) {
-                                NSLog(@"Error: %@", error);
-                            }
-                        }];
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Library-getBooks-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var LibraryApi = require('library_api');
-
-var api = new LibraryApi.LibraryApi()
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.getBooks(callback);
-</code></pre>
-                            </div>
-
-                            <!--<div class="tab-pane" id="examples-Library-getBooks-0-angular">
-              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-            </div>-->
-                            <div class="tab-pane" id="examples-Library-getBooks-0-csharp">
-                              <pre class="prettyprint"><code class="language-cs">using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class getBooksExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new LibraryApi();
-
-            try
-            {
-                // Finds all books
-                array[Book] result = apiInstance.getBooks();
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling LibraryApi.getBooks: " + e.Message );
-            }
-        }
-    }
-}
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Library-getBooks-0-php">
-                              <pre class="prettyprint"><code class="language-php"><&#63;php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\LibraryApi();
-
-try {
-    $result = $api_instance->getBooks();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LibraryApi->getBooks: ', $e->getMessage(), PHP_EOL;
-}
-?></code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Library-getBooks-0-perl">
-                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::LibraryApi;
-
-my $api_instance = WWW::SwaggerClient::LibraryApi->new();
-
-eval { 
-    my $result = $api_instance->getBooks();
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling LibraryApi->getBooks: $@\n";
-}</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Library-getBooks-0-python">
-                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = swagger_client.LibraryApi()
-
-try: 
-    # Finds all books
-    api_response = api_instance.get_books()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LibraryApi->getBooks: %s\n" % e)</code></pre>
-                            </div>
-                          </div>
-
-                          <h2>Parameters</h2>
-
-
-
-
-
-
-                          <h2>Responses</h2>
-                            <h3> Status: 200 - OK </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                                <li class="active">
-                                  <a data-toggle="tab" href="#responses-getBooks-200-schema">Schema</a>
-                                </li>
-
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getBooks-200-schema">
-                                  <div id='responses-getBooks-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
-                                    <script>
-                                      $(document).ready(function() {
-                                        var schemaWrapper = {
-  "description" : "OK",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/Book"
-    }
-  }
-};
-                                        var schema = schemaWrapper.schema;
-                                        if (schema.$ref != null) {
-                                          schema = defsParser.$refs.get(schema.$ref);
-                                        } else {
-                                          schemaWrapper.definitions = Object.assign({}, defs);
-                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                            console.log(err);
-                                          });
-                                        }
-
-                                        //console.log(JSON.stringify(schema));
-                                        var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-getBooks-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-getBooks-200-schema-200');
-                                        result.empty();
-                                        result.append(view.render());
-                                      });
-                                    </script>
-                                  </div>
-                                  <input id='responses-getBooks-200-schema-data' type='hidden' value=''></input>
-                                </div>
-                            </div>
-
-                        </article>
-                      </div>
-                      <hr>
-                    <div id="api-Library-updateBook">
-                      <article id="api-Library-updateBook-0" data-group="User" data-name="updateBook" data-version="0">
-                        <div class="pull-left">
-                          <h1>updateBook</h1>
+                          <h1>booksIdPut</h1>
                           <p>Update existing book</p>
                         </div>
                         <div class="pull-right"></div>
@@ -1834,24 +1574,24 @@ except ApiException as e:
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Library-updateBook-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Library-updateBook-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Library-updateBook-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Library-updateBook-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Library-updateBook-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Library-updateBook-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Library-updateBook-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Library-updateBook-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Library-updateBook-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Library-updateBook-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Library-updateBook-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Library-booksIdPut-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Library-booksIdPut-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Library-booksIdPut-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Library-booksIdPut-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Library-booksIdPut-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Library-booksIdPut-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Library-booksIdPut-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Library-booksIdPut-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Library-booksIdPut-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Library-booksIdPut-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Library-booksIdPut-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Library-updateBook-0-curl">
+                          <div class="tab-pane active" id="examples-Library-booksIdPut-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X PUT "http://localhost:3000/api/books/{id}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Library-updateBook-0-java">
+                          <div class="tab-pane" id="examples-Library-booksIdPut-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1866,18 +1606,18 @@ public class LibraryApiExample {
         
         LibraryApi apiInstance = new LibraryApi();
         Integer id = 56; // Integer | Book id
-        BookData body = ; // BookData | bookData object that needs to be added to the library
+        BookData body = ; // BookData | book data to be updated in library
         try {
-            apiInstance.updateBook(id, body);
+            apiInstance.booksIdPut(id, body);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LibraryApi#updateBook");
+            System.err.println("Exception when calling LibraryApi#booksIdPut");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Library-updateBook-0-android">
+                          <div class="tab-pane" id="examples-Library-booksIdPut-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.LibraryApi;
 
 public class LibraryApiExample {
@@ -1885,28 +1625,28 @@ public class LibraryApiExample {
     public static void main(String[] args) {
         LibraryApi apiInstance = new LibraryApi();
         Integer id = 56; // Integer | Book id
-        BookData body = ; // BookData | bookData object that needs to be added to the library
+        BookData body = ; // BookData | book data to be updated in library
         try {
-            apiInstance.updateBook(id, body);
+            apiInstance.booksIdPut(id, body);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LibraryApi#updateBook");
+            System.err.println("Exception when calling LibraryApi#booksIdPut");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Library-updateBook-0-groovy">
+  <div class="tab-pane" id="examples-Library-booksIdPut-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Library-updateBook-0-objc">
+                            <div class="tab-pane" id="examples-Library-booksIdPut-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Integer *id = 56; // Book id
-BookData *body = ; // bookData object that needs to be added to the library
+BookData *body = ; // book data to be updated in library
 
 LibraryApi *apiInstance = [[LibraryApi alloc] init];
 
 // Update existing book
-[apiInstance updateBookWith:id
+[apiInstance booksIdPutWith:id
     body:body
               completionHandler: ^(NSError* error) {
                             if (error) {
@@ -1916,14 +1656,14 @@ LibraryApi *apiInstance = [[LibraryApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-updateBook-0-javascript">
+                            <div class="tab-pane" id="examples-Library-booksIdPut-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var LibraryApi = require('library_api');
 
 var api = new LibraryApi.LibraryApi()
 
 var id = 56; // {Integer} Book id
 
-var body = ; // {BookData} bookData object that needs to be added to the library
+var body = ; // {BookData} book data to be updated in library
 
 
 var callback = function(error, data, response) {
@@ -1933,14 +1673,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateBook(id, body, callback);
+api.booksIdPut(id, body, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Library-updateBook-0-angular">
+                            <!--<div class="tab-pane" id="examples-Library-booksIdPut-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Library-updateBook-0-csharp">
+                            <div class="tab-pane" id="examples-Library-booksIdPut-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1949,23 +1689,23 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class updateBookExample
+    public class booksIdPutExample
     {
         public void main()
         {
             
             var apiInstance = new LibraryApi();
             var id = 56;  // Integer | Book id
-            var body = new BookData(); // BookData | bookData object that needs to be added to the library
+            var body = new BookData(); // BookData | book data to be updated in library
 
             try
             {
                 // Update existing book
-                apiInstance.updateBook(id, body);
+                apiInstance.booksIdPut(id, body);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling LibraryApi.updateBook: " + e.Message );
+                Debug.Print("Exception when calling LibraryApi.booksIdPut: " + e.Message );
             }
         }
     }
@@ -1973,40 +1713,40 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-updateBook-0-php">
+                            <div class="tab-pane" id="examples-Library-booksIdPut-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\LibraryApi();
 $id = 56; // Integer | Book id
-$body = ; // BookData | bookData object that needs to be added to the library
+$body = ; // BookData | book data to be updated in library
 
 try {
-    $api_instance->updateBook($id, $body);
+    $api_instance->booksIdPut($id, $body);
 } catch (Exception $e) {
-    echo 'Exception when calling LibraryApi->updateBook: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LibraryApi->booksIdPut: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-updateBook-0-perl">
+                            <div class="tab-pane" id="examples-Library-booksIdPut-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::LibraryApi;
 
 my $api_instance = WWW::SwaggerClient::LibraryApi->new();
 my $id = 56; # Integer | Book id
-my $body = WWW::SwaggerClient::Object::BookData->new(); # BookData | bookData object that needs to be added to the library
+my $body = WWW::SwaggerClient::Object::BookData->new(); # BookData | book data to be updated in library
 
 eval { 
-    $api_instance->updateBook(id => $id, body => $body);
+    $api_instance->booksIdPut(id => $id, body => $body);
 };
 if ($@) {
-    warn "Exception when calling LibraryApi->updateBook: $@\n";
+    warn "Exception when calling LibraryApi->booksIdPut: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Library-updateBook-0-python">
+                            <div class="tab-pane" id="examples-Library-booksIdPut-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -2016,13 +1756,13 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.LibraryApi()
 id = 56 # Integer | Book id
-body =  # BookData | bookData object that needs to be added to the library
+body =  # BookData | book data to be updated in library
 
 try: 
     # Update existing book
-    api_instance.update_book(id, body)
+    api_instance.books_id_put(id, body)
 except ApiException as e:
-    print("Exception when calling LibraryApi->updateBook: %s\n" % e)</code></pre>
+    print("Exception when calling LibraryApi->booksIdPut: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -2038,7 +1778,7 @@ except ApiException as e:
 <td>
 
 
-    <div id="d2e199_updateBook_id">
+    <div id="d2e199_booksIdPut_id">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -2075,7 +1815,7 @@ $(document).ready(function() {
   var schemaWrapper = {
   "in" : "body",
   "name" : "body",
-  "description" : "bookData object that needs to be added to the library",
+  "description" : "book data to be updated in library",
   "required" : true,
   "schema" : {
     "$ref" : "#/definitions/BookData"
@@ -2092,12 +1832,12 @@ $(document).ready(function() {
   }
 
   var view = new JSONSchemaView(schema,2,{isBodyParam: true});
-  var result = $('#d2e199_updateBook_body');
+  var result = $('#d2e199_booksIdPut_body');
   result.empty();
   result.append(view.render());
 });
 </script>
-<div id="d2e199_updateBook_body"></div>
+<div id="d2e199_booksIdPut_body"></div>
 </td>
 </tr>
 
@@ -2133,6 +1873,266 @@ $(document).ready(function() {
                         </article>
                       </div>
                       <hr>
+                    <div id="api-Library-booksPost">
+                      <article id="api-Library-booksPost-0" data-group="User" data-name="booksPost" data-version="0">
+                        <div class="pull-left">
+                          <h1>booksPost</h1>
+                          <p>Add a new book to the library</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/books</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Library-booksPost-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Library-booksPost-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Library-booksPost-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Library-booksPost-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Library-booksPost-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Library-booksPost-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Library-booksPost-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Library-booksPost-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Library-booksPost-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Library-booksPost-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Library-booksPost-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Library-booksPost-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:3000/api/books"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Library-booksPost-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.LibraryApi;
+
+import java.io.File;
+import java.util.*;
+
+public class LibraryApiExample {
+
+    public static void main(String[] args) {
+        
+        LibraryApi apiInstance = new LibraryApi();
+        BookData body = ; // BookData | bookData object that needs to be added to the library
+        try {
+            apiInstance.booksPost(body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LibraryApi#booksPost");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Library-booksPost-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.LibraryApi;
+
+public class LibraryApiExample {
+
+    public static void main(String[] args) {
+        LibraryApi apiInstance = new LibraryApi();
+        BookData body = ; // BookData | bookData object that needs to be added to the library
+        try {
+            apiInstance.booksPost(body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LibraryApi#booksPost");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Library-booksPost-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Library-booksPost-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">BookData *body = ; // bookData object that needs to be added to the library
+
+LibraryApi *apiInstance = [[LibraryApi alloc] init];
+
+// Add a new book to the library
+[apiInstance booksPostWith:body
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Library-booksPost-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var LibraryApi = require('library_api');
+
+var api = new LibraryApi.LibraryApi()
+
+var body = ; // {BookData} bookData object that needs to be added to the library
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.booksPost(body, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Library-booksPost-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Library-booksPost-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class booksPostExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new LibraryApi();
+            var body = new BookData(); // BookData | bookData object that needs to be added to the library
+
+            try
+            {
+                // Add a new book to the library
+                apiInstance.booksPost(body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling LibraryApi.booksPost: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Library-booksPost-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\LibraryApi();
+$body = ; // BookData | bookData object that needs to be added to the library
+
+try {
+    $api_instance->booksPost($body);
+} catch (Exception $e) {
+    echo 'Exception when calling LibraryApi->booksPost: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Library-booksPost-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::LibraryApi;
+
+my $api_instance = WWW::SwaggerClient::LibraryApi->new();
+my $body = WWW::SwaggerClient::Object::BookData->new(); # BookData | bookData object that needs to be added to the library
+
+eval { 
+    $api_instance->booksPost(body => $body);
+};
+if ($@) {
+    warn "Exception when calling LibraryApi->booksPost: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Library-booksPost-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.LibraryApi()
+body =  # BookData | bookData object that needs to be added to the library
+
+try: 
+    # Add a new book to the library
+    api_instance.books_post(body)
+except ApiException as e:
+    print("Exception when calling LibraryApi->booksPost: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">body <span style="color:red;">*</span></td>
+<td>
+
+
+<script>
+$(document).ready(function() {
+  var schemaWrapper = {
+  "in" : "body",
+  "name" : "body",
+  "description" : "bookData object that needs to be added to the library",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/BookData"
+  }
+};
+  var schema = schemaWrapper.schema;
+  if (schema.$ref != null) {
+    schema = defsParser.$refs.get(schema.$ref);
+  } else {
+    schemaWrapper.definitions = Object.assign({}, defs);
+    $RefParser.dereference(schemaWrapper).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+  var result = $('#d2e199_booksPost_body');
+  result.empty();
+  result.append(view.render());
+});
+</script>
+<div id="d2e199_booksPost_body"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 201 - Created </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
                   </section>
           </div>
           <div id="footer">
@@ -2147,7 +2147,7 @@ $(document).ready(function() {
           </div>
           <div id="generator">
             <div class="content">
-              Generated 2018-09-18T11:03:55.685Z
+              Generated 2018-09-22T07:38:27.472Z
             </div>
           </div>
       </div>

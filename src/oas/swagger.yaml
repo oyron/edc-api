@@ -18,6 +18,7 @@ paths:
       tags:
         - library
       summary: Return all books
+      operationId: getBooks
       produces:
         - application/json
       responses:
@@ -31,6 +32,7 @@ paths:
       tags:
         - library
       summary: Add a new book to the library
+      operationId: addBook
       consumes:
         - application/json
       produces:
@@ -53,6 +55,7 @@ paths:
       tags:
         - library
       summary: Get book
+      operationId: getBook
       produces:
         - application/json
         - text/html
@@ -76,6 +79,7 @@ paths:
       tags:
         - library
       summary: Update existing book
+      operationId: updateBook
       produces:
         - application/json
         - text/html
@@ -105,6 +109,7 @@ paths:
       tags:
         - library
       summary: Delete existing book
+      operationId: deleteBook
       produces:
         - text/html
       parameters:
