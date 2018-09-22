@@ -1,25 +1,23 @@
 swagger: '2.0'
 info:
+  title: Library API
   description: Library API - EDC API Workshop
   version: 1.0.0
-  title: Library API
   contact:
     email: oyron@equinor.com
 host: 'localhost:3000'
 basePath: /api
+schemes:
+  - http
 tags:
   - name: library
     description: A library of books
-schemes:
-  - http
 paths:
   /books:
     get:
       tags:
         - library
-      summary: Finds all books
-      description: Return all books
-      operationId: getBooks
+      summary: Return all books
       produces:
         - application/json
       responses:
@@ -29,13 +27,10 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Book'
-              
     post:
       tags:
         - library
       summary: Add a new book to the library
-      description: ''
-      operationId: addBook
       consumes:
         - application/json
       produces:
@@ -53,16 +48,14 @@ paths:
           schema:
             items:
               $ref: '#/definitions/Book'
-              
   '/books/{id}':
     get:
       tags:
         - library
       summary: Get book
-      description: ''
-      operationId: getBook
       produces:
         - application/json
+        - text/html
       parameters:
         - name: id
           in: path
@@ -79,13 +72,13 @@ paths:
           description: Bad request
         '404':
           description: Not found
-          
     put:
       tags:
         - library
       summary: Update existing book
-      description: ''
-      operationId: updateBook
+      produces:
+        - application/json
+        - text/html
       parameters:
         - name: id
           in: path
@@ -94,7 +87,7 @@ paths:
           required: true
         - name: body
           in: body
-          description: bookData object that needs to be added to the library
+          description: book data to be updated in library
           required: true
           schema:
             $ref: '#/definitions/BookData'
@@ -108,13 +101,12 @@ paths:
           description: Bad request
         '404':
           description: Not found
-          
     delete:
       tags:
         - library
       summary: Delete existing book
-      description: ''
-      operationId: deleteBook
+      produces:
+        - text/html
       parameters:
         - in: path
           name: id
@@ -128,7 +120,6 @@ paths:
           description: Bad request
         '404':
           description: Not found
-          
 definitions:
   Book:
     type: object
@@ -146,7 +137,6 @@ definitions:
         type: string
       author:
         type: string
-        
 externalDocs:
   description: API documentation
-  url: http://localhost:3000
+  url: 'http://localhost:3000'

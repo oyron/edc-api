@@ -127,9 +127,9 @@ Also change `scheme` to `https`. Export the file as JSON (APIM currently does no
 
 2. Add your API in the [Azure portal](https://portal.azure.com/#@StatoilSRM.onmicrosoft.com/resource/subscriptions/5f59116d-13e1-4d1a-a272-1cea3a54228c/resourceGroups/IntegrationServices/providers/Microsoft.ApiManagement/service/omniadev/apim-apis)
   - Create new API from OpenAPI Specification. Select the `swagger.json` file.
-  - Display name: EDC API <user name>, e.g. EDC API OYRON
-  - Name: edc-api-<user name>, e.g. edc-api-oyron
-  - API URL Suffix: same as name (edc-api-<user name>)
+  - Display name: EDC API \<user name\>, e.g. EDC API OYRON
+  - Name: edc-api-\<user name\>, e.g. edc-api-oyron
+  - API URL Suffix: same as name (edc-api-\<user name\>)
   
 3. After creating the API, go to settings, add "EDC API Workshop" as a product
 
