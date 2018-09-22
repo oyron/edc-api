@@ -26,6 +26,7 @@
           "library"
         ],
         "summary": "Return all books",
+        "operationId": "getBooks",
         "produces": [
           "application/json"
         ],
@@ -46,6 +47,7 @@
           "library"
         ],
         "summary": "Add a new book to the library",
+        "operationId": "addBook",
         "consumes": [
           "application/json"
         ],
@@ -81,6 +83,7 @@
           "library"
         ],
         "summary": "Get book",
+        "operationId": "getBook",
         "produces": [
           "application/json",
           "text/html"
@@ -116,6 +119,7 @@
           "library"
         ],
         "summary": "Update existing book",
+        "operationId": "updateBook",
         "produces": [
           "application/json",
           "text/html"
@@ -160,6 +164,7 @@
           "library"
         ],
         "summary": "Delete existing book",
+        "operationId": "deleteBook",
         "produces": [
           "text/html"
         ],
@@ -215,6 +220,6 @@
   },
   "externalDocs": {
     "description": "API documentation",
-    "url": "https://library-oyron.azurewebsites.net"
+    "url": "https://library-oyron.azurewebsites.net/"
   }
 }
