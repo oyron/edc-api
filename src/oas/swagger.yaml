@@ -1,44 +1,33 @@
 swagger: '2.0'
 info:
+  title: Library API
   description: Library API - EDC API Workshop
   version: 1.0.0
-  title: Library API
   contact:
     email: oyron@equinor.com
 host: 'localhost:3000'
 basePath: /api
+schemes:
+  - http
 tags:
   - name: library
     description: A library of books
-schemes:
-  - http
 paths:
-  '/books/{id}':
+  /books:
     get:
       tags:
         - library
-      summary: Get book
-      description: ''
-      operationId: getBook
+      summary: Return all books
+      operationId: getBooks
       produces:
         - application/json
-      parameters:
-        - name: id
-          in: path
-          description: Book id
-          type: integer
-          required: true
       responses:
         '200':
           description: OK
           schema:
+            type: array
             items:
               $ref: '#/definitions/Book'
-        '400':
-          description: Bad request
-        '404':
-          description: Not found
-          
 definitions:
   Book:
     type: object
@@ -56,7 +45,6 @@ definitions:
         type: string
       author:
         type: string
-        
 externalDocs:
-  description: API portal
-  url: http://localhost:3000
+  description: API documentation
+  url: 'http://localhost:3000'
