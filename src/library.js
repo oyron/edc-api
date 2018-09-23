@@ -7,7 +7,6 @@ class Library {
         this.addBook({title: "Robinson Crusoe", author: "Daniel Defoe"});
     }
 
-
     getAllBooks() {
         return Array.from(this.books.values());
     }
@@ -22,10 +21,6 @@ class Library {
         return book;
     }
 
-    hasBookId(bookId) {
-        return this.books.has(bookId);
-    }
-
     updateBook(bookId, book) {
         book.id = bookId;
         this.books.set(bookId, book);
@@ -36,8 +31,9 @@ class Library {
         this.books.delete(bookId);
         return true;
     }
-
+    hasBookId(bookId) {
+        return this.books.has(bookId);
+    }
 }
-
 
 module.exports = Library;
