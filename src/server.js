@@ -10,7 +10,7 @@ const logger = require("./logger");
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(cors({origin: ["http://localhost:8080", "https://editor.swagger.io"]}));
+app.use(cors({origin: ["https://editor.swagger.io", "http://localhost:8080"]}));
 app.use(express.static(path.join(__dirname, 'static')));
 app.use("/api", api);
 
