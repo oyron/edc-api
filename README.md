@@ -74,7 +74,13 @@ Swagger specification: https://swagger.io/specification/v2/
 
 ### Part 2B - Generate documentation
 
-**With Docker, Using [OpenAPI Generator](https://github.com/openapitools/openapi-generator#33---online-openapi-generator)**
+**From Swagger Editor**
+
+Select Generate Client -> html2. Unzip and place in folder `src/static/api-docs`
+
+Browse the generated documentation.
+
+**(Optional) With Docker, Using [OpenAPI Generator](https://github.com/openapitools/openapi-generator#33---online-openapi-generator)**
 
 Run the following command from the `src` directory:
 
@@ -84,13 +90,6 @@ docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate \
     -g html \
     -o /local/static/api-docs/openapi-generator
 ```
-
-
-**From Swagger Editor**
-
-Select Generate Client -> html2. Unzip and place in folder `src/static/api-docs`
-
-Browse the generated documentation.
 
 ## Part 3
 ### Azure deployment
