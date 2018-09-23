@@ -1,9 +1,9 @@
 "use strict";
 
 const express = require('express');
+const app = express();
 const bodyParser = require("body-parser");
 const api = require("./api");
-const app = express();
 const cors = require('cors');
 const path = require("path");
 const logger = require("./logger");
