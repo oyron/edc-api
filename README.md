@@ -63,15 +63,18 @@ For more details, see: https://restfulapi.net/http-status-codes/
 Use https://editor.swagger.io/<br>
 Or run locally using Docker: `docker run -p 8080:8080 --name swagger-editor swaggerapi/swagger-editor`
 
-Swagger specification: https://swagger.io/specification/v2/
+Either keep working on branch `part1` and only load the Swagger skeleton file from branch `part2`, by 
+running: `git checkout origin/part2 -- src/oas/swagger.yaml`, or replace your work from part 1 and load a complete API and Swagger skeleton, by switching to branch `part2`. 
 
 - Open the skeleton Swagger file `src/oas/swagger.yaml` in the editor.
 - Add the missing endpoints to the Swagger file. Make sure the yaml is valid.
 - Test running the endpoints from the Swagger editor.
 
+Swagger specification: https://swagger.io/specification/v2/
+
 ### Part 2B - Generate documentation
 
-**With Docker, Using OpenAPI Generator**
+**With Docker, Using [OpenAPI Generator](https://github.com/openapitools/openapi-generator#33---online-openapi-generator)**
 
 Run the following command from the `src` directory:
 
@@ -81,7 +84,6 @@ docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate \
     -g html \
     -o /local/static/api-docs/openapi-generator
 ```
-[Details about OpenAPI Generator](https://github.com/openapitools/openapi-generator#33---online-openapi-generator)
 
 
 **From Swagger Editor**
@@ -95,7 +97,9 @@ Browse the generated documentation.
 
 In this part we will deploy our Library API to Azure.
 
-**Procedure:**
+Continue working on your current branch, or switch to branch `master` to load a completed Swagger file and API.
+
+**Deployment Procedure:**
 
 1. Create Azure Web App using the Azure portal: https://portal.azure.com
   - App name: library-<user name>
@@ -118,6 +122,8 @@ In this part we will deploy our Library API to Azure.
 5. Deploy: `git push azure master`
 
 6. Test accessing the API.
+
+7. Check the content of the server log by opening the SSH console in the Azure portal, and viewing `/home/site/wwwroot/src/log/server.log`
 
 ## Part 4
 ### API Management
