@@ -1,5 +1,3 @@
-"use strict";
-
 class Library {
     constructor() {
         this.uid = 0;
