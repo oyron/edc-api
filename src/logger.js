@@ -1,5 +1,3 @@
-"use strict";
-
 const {format, createLogger, transports} = require('winston');
 const dateformat = require('dateformat');
 const path = require("path");
