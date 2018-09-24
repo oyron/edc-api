@@ -2,9 +2,9 @@ class Library {
     constructor() {
         this.uid = 0;
         this.books = new Map();
-        this.addBook({title: "1984", author: "George Orwell"});
-        this.addBook({title: "War and Peace", author: "Leo Tolstoy"});
-        this.addBook({title: "Robinson Crusoe", author: "Daniel Defoe"});
+        this.addBook({title: '1984', author: 'George Orwell'});
+        this.addBook({title: 'War and Peace', author: 'Leo Tolstoy'});
+        this.addBook({title: 'Robinson Crusoe', author: 'Daniel Defoe'});
     }
 
     getAllBooks() {
