@@ -60,9 +60,9 @@ function deleteBook(req, res) {
 }
 
 function logRequest(req, res, next) {
-    let payloadLog = "";
+    let payloadLog = '';
     if (Object.keys(req.body).length > 0) {
-        payloadLog = "Payload: " + JSON.stringify(req.body);
+        payloadLog = 'Payload: ' + JSON.stringify(req.body);
     }
     logger.debug(`${req.method} ${req.url} ${payloadLog}`);
     next();
@@ -70,7 +70,7 @@ function logRequest(req, res, next) {
 
 function unknownUrlHandler(req, res)  {
     logger.error(`Non existing API route: ${req.method} ${req.originalUrl}`);
-    res.status(400).send("Bad request - non existing API route");
+    res.status(400).send('Bad request - non existing API route');
 }
 
 function errorHandler (err, req, res, next) {

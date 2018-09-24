@@ -1,6 +1,6 @@
 const {format, createLogger, transports} = require('winston');
 const dateformat = require('dateformat');
-const path = require("path");
+const path = require('path');
 const logLevel = process.env.LOG_LEVEL ? process.env.LOG_LEVEL : 'debug';
 
 const levelToUppercaseFormat = format(info => {
@@ -9,7 +9,7 @@ const levelToUppercaseFormat = format(info => {
 });
 
 const timestampFormat = format(info => {
-    info.timestamp = dateformat(info.timestampt, "yyyy-mm-dd hh:MM:ss,l");
+    info.timestamp = dateformat(info.timestampt, 'yyyy-mm-dd hh:MM:ss,l');
     return info;
 });
 
