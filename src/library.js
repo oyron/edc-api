@@ -31,6 +31,7 @@ class Library {
         this.books.delete(bookId);
         return true;
     }
+
     hasBookId(bookId) {
         return this.books.has(bookId);
     }
