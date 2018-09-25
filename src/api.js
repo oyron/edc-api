@@ -10,7 +10,7 @@ router.post('/books', addBook);
 router.get('/books/:id', getBook);
 router.put('/books/:id', updateBook);
 router.delete('/books/:id', deleteBook);
-router.use(unknownUrlHandler);
+router.use(unknownRouteHandler);
 router.use(errorHandler);
 
 const library = new Library();
@@ -68,7 +68,7 @@ function logRequest(req, res, next) {
     next();
 }
 
-function unknownUrlHandler(req, res)  {
+function unknownRouteHandler(req, res)  {
     logger.error(`Non existing API route: ${req.method} ${req.originalUrl}`);
     res.status(400).send('Bad request - non existing API route');
 }
