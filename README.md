@@ -29,7 +29,7 @@ Make sure the server is running by accessing http://localhost:3000
 **The Library API**
 
 The API should support the operations listed below. The API should use JSON as data format. 
-Operations taking id as parameter should return an error message if the id does not exist. 
+Operations taking id as input parameter should return an error message if the id does not exist. 
 Other types of input validation is not required. 
 - **Get all books.** Return a list of books. *Already implemented.*
 - **Get an existing book (by id).** Return the requested book.
