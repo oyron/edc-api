@@ -15,9 +15,10 @@ class Library {
         return this.books.get(bookId);
     }
 
-    addBook(book) {
+    addBook(bookData) {
         const id = this.uid++;
-        this.books.set(id, {id, title: book.title, author: book.author});
+        const book = {id, title: bookData.title, author: bookData.author};
+        this.books.set(id, book);
         return book;
     }
 
