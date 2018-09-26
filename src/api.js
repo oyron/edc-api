@@ -20,7 +20,7 @@ function getBooks(req, res) {
 }
 
 function getBook(req, res) {
-    const bookId = Number(req.params.id);
+    const bookId =req.params.id;
     if (library.hasBookId(bookId)) {
         res.send(library.getBook(bookId));
     }
@@ -37,10 +37,10 @@ function addBook(req, res) {
 }
 
 function updateBook(req, res) {
-    const bookId = Number(req.params.id);
+    const bookId = req.params.id;
     if (library.hasBookId(bookId)) {
-        const book = req.body;
-        library.updateBook(bookId, book);
+        const bookData = req.body;
+        const book = library.updateBook(bookId, bookData);
         res.send(book);
     }
     else {
@@ -49,7 +49,7 @@ function updateBook(req, res) {
 }
 
 function deleteBook(req, res) {
-    const bookId = Number(req.params.id);
+    const bookId = req.params.id;
     if (library.hasBookId(bookId)) {
         library.deleteBook(bookId);
         res.sendStatus(204);
