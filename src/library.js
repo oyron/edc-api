@@ -12,7 +12,7 @@ class Library {
     }
 
     getBook(bookId) {
-        return this.books.get(bookId);
+        return this.books.get(toNumber(bookId));
     }
 
     addBook(bookData) {
@@ -22,20 +22,28 @@ class Library {
         return book;
     }
 
-    updateBook(bookId, book) {
-        book.id = bookId;
-        this.books.set(bookId, book);
-        return true;
+    updateBook(bookId, bookData) {
+        const id = toNumber(bookId);
+        const book = {id, title: bookData.title, author: bookData.author};
+        this.books.set(id, book);
+        return book;
     }
 
     deleteBook(bookId) {
-        this.books.delete(bookId);
+        this.books.delete(toNumber(bookId));
         return true;
     }
 
     hasBookId(bookId) {
-        return this.books.has(bookId);
+        return this.books.has(toNumber(bookId));
     }
+}
+
+function toNumber(possibleStringValue) {
+    if (typeof possibleStringValue === 'string') {
+        return Number(possibleStringValue);
+    }
+    return possibleStringValue;
 }
 
 module.exports = Library;
