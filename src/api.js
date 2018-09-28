@@ -3,7 +3,6 @@ const router = express.Router();
 const logger = require("./logger");
 const Library = require("./library");
 
-
 router.all('*', logRequest);
 router.get('/books', getBooks);
 router.post('/books', addBook);
@@ -31,7 +30,7 @@ function getBook(req, res) {
 
 function addBook(req, res) {
     const bookData = req.body;
-    const book = library.addBook(bookData);
+    const book = library.addBook(bookData.title, bookData.author);
     res.location(`/api/books/${book.id}`);
     res.status(201).send(book);
 }
@@ -40,7 +39,7 @@ function updateBook(req, res) {
     const bookId = req.params.id;
     if (library.hasBookId(bookId)) {
         const bookData = req.body;
-        const book = library.updateBook(bookId, bookData);
+        const book = library.updateBook(bookId, bookData.title, bookData.author);
         res.send(book);
     }
     else {
@@ -73,6 +72,7 @@ function unknownRouteHandler(req, res)  {
     res.status(400).send('Bad request - non existing API route');
 }
 
+// noinspection JSUnusedLocalSymbols
 function errorHandler (err, req, res, next) {
     logger.error(err.stack);
     res.status(500).send(err.stack);

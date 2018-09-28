@@ -2,35 +2,35 @@ class Library {
     constructor() {
         this.uid = 0;
         this.books = new Map();
-        this.addBook({title: '1984', author: 'George Orwell'});
-        this.addBook({title: 'War and Peace', author: 'Leo Tolstoy'});
-        this.addBook({title: 'Robinson Crusoe', author: 'Daniel Defoe'});
+        this.addBook('1984', 'George Orwell');
+        this.addBook('War and Peace', 'Leo Tolstoy');
+        this.addBook('Robinson Crusoe', 'Daniel Defoe');
     }
 
     getAllBooks() {
         return Array.from(this.books.values());
     }
 
-    getBook(bookId) {
-        return this.books.get(toNumber(bookId));
+    getBook(id) {
+        return this.books.get(toNumber(id));
     }
 
-    addBook(bookData) {
+    addBook(title, author) {
         const id = this.uid++;
-        return this._addBook(id, bookData.title, bookData.author);
+        return this._addBook(id, title, author);
     }
 
-    updateBook(bookId, bookData) {
-        return this._addBook(toNumber(bookId), bookData.title, bookData.author);
+    updateBook(id, title, author) {
+        return this._addBook(toNumber(id), title, author);
     }
 
-    deleteBook(bookId) {
-        this.books.delete(toNumber(bookId));
+    deleteBook(id) {
+        this.books.delete(toNumber(id));
         return true;
     }
 
-    hasBookId(bookId) {
-        return this.books.has(toNumber(bookId));
+    hasBookId(id) {
+        return this.books.has(toNumber(id));
     }
 
     _addBook(id, title, author) {
