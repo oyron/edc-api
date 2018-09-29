@@ -13,9 +13,7 @@ const timestampFormat = format(info => {
     return info;
 });
 
-const consoleFormat = format.combine(
-    levelToUppercaseFormat(),
-    format.colorize(),
+const commonFormat = format.combine(
     timestampFormat(),
     format.align(),
     format.printf(info => {
@@ -23,13 +21,15 @@ const consoleFormat = format.combine(
     })
 );
 
+const consoleFormat = format.combine(
+    levelToUppercaseFormat(),
+    format.colorize(),
+    commonFormat
+);
+
 const logFileFormat = format.combine(
     levelToUppercaseFormat(),
-    timestampFormat(),
-    format.align(),
-    format.printf(info => {
-        return `${info.timestamp} ${info.level}: ${info.message}`
-    })
+    commonFormat
 );
 
 const logger = createLogger({
