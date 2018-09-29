@@ -15,6 +15,6 @@ app.use('/api', api);
 
 
 const server = http.createServer(app);
-server.listen(port, () => logger.info(`Library server is running on ${port}\n process.env: ${JSON.stringify(process.env)}`));
+server.listen(port, () => logger.info(`Library server is running on ${port}`));
 
 module.exports = server;
