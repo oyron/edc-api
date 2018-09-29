@@ -44,3 +44,23 @@ describe('/GET api/book/{id}', () => {
             });
     });
 });
+
+describe('/POST api/books', () => {
+    it('should be possible to POST a book', (done) => {
+        const author = "Eldar Sætre";
+        const title  = "The Statoil Book";
+
+        chai.request(server)
+            .post('/api/books')
+            .send({author, title})
+            .end((err, res) => {
+                expect(err).to.be.null;
+                expect(res).to.have.status(201);
+                const book = res.body;
+                expect(book.id).to.be.a("number");
+                expect(book.author).to.equal(author);
+                expect(book.title).to.equal(title);
+                done();
+            });
+    });
+});
