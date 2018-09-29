@@ -68,7 +68,7 @@ function logRequest(req, res, next) {
 }
 
 function unknownRouteHandler(req, res)  {
-    logger.error(`Non existing API route: ${req.method} ${req.originalUrl}`);
+    logger.warn(`Non existing API route: ${req.method} ${req.originalUrl}`);
     res.status(400).send('Bad request - non existing API route');
 }
 
