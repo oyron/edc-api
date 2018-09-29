@@ -98,7 +98,7 @@ In this part we will deploy our Library API to Azure.
 
 Continue working on your current branch, or switch to branch `master` to load a completed Swagger file and API.
 
-**Deployment Procedure:**
+**Deployment Procedure Azure Portal:**
 
 1. Create Azure Web App using the Azure portal: https://portal.azure.com
   - App name: library-<user name>
@@ -123,6 +123,20 @@ Continue working on your current branch, or switch to branch `master` to load a 
 6. Test accessing the API.
 
 7. Check the content of the server log by opening the SSH console in the Azure portal, and viewing `/home/site/wwwroot/src/log/server.log`
+
+
+**Deployment Procedure Azure CLI**
+
+```
+az login
+az account set --subscription "VanDamme"
+az appservice plan create --name Library<UserName>SP --resource-group APIWorkshop --sku B1 --is-linux --location "North Europe"
+az webapp create --resource-group APIWorkshop --plan Library<UserName>SP --name library-<user name> --runtime "NODE|10.1" --deployment-local-git
+az webapp deployment user set --user-name <username> --password <password>
+git remote add azure <url>
+git push azure master
+
+```
 
 ## Part 4
 ### API Management
