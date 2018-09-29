@@ -1,4 +1,6 @@
-describe("Player", function() {
+const expect = require('chai').expect;
+
+describe("Library", function() {
     const Library = require('../Library');
     let library;
 
@@ -9,23 +11,22 @@ describe("Player", function() {
 
     it("should be possible to list all books", function() {
         const books = library.getAllBooks();
-        expect(books).toBeDefined();
-        expect(Array.isArray(books)).toBeTruthy();
+        expect(books).to.be.an("array");
     });
 
 
     it("should be possible to get a single book, by numeric id", function() {
         const book = library.getBook(1);
-        expect(typeof(book) === 'object').toBeTruthy();
-        expect(book.id).toBeDefined();
-        expect(book.author).toBeDefined();
-        expect(book.title).toBeDefined();
+        expect(book).to.be.an("object");
+        expect(book.id).to.be.a("number");
+        expect(book.author).to.be.a("string");
+        expect(book.title).to.be.a("string")
     });
 
 
     it("should be possible to get a single book, by string id", function() {
         const book = library.getBook("1");
-        expect(typeof(book) === 'object').toBeTruthy();
+        expect(book).to.be.an("object");
     });
 
 
@@ -33,10 +34,10 @@ describe("Player", function() {
         const title = "The Statoil Book";
         const author = "Eldar Sætre";
         const book = library.addBook(title, author);
-        expect(typeof(book) === 'object').toBeTruthy();
-        expect(book.id).toBeDefined();
-        expect(book.author).toBe(author);
-        expect(book.title).toBe(title);
+        expect(book).to.be.an("object");
+        expect(book.id).to.be.a("number");
+        expect(book.author).to.equal(author);
+        expect(book.title).to.equal(title);
     });
 
 
@@ -44,12 +45,13 @@ describe("Player", function() {
         const title = "The Statoil Book";
         const author = "Eldar Sætre";
         const bookId = 1;
-        expect(library.hasBookId(bookId)).toBeTruthy();
+        // noinspection BadExpressionStatementJS
+        expect(library.hasBookId(bookId)).to.be.true;
         const book = library.updateBook(bookId, title, author);
-        expect(typeof(book) === 'object').toBeTruthy();
-        expect(book.id).toBe(bookId);
-        expect(book.author).toBe(author);
-        expect(book.title).toBe(title);
+        expect(book).to.be.an("object");
+        expect(book.id).to.equal(bookId);
+        expect(book.author).to.equal(author);
+        expect(book.title).to.equal(title);
     });
 
 
@@ -57,28 +59,33 @@ describe("Player", function() {
         const title = "The Statoil Book";
         const author = "Eldar Sætre";
         const bookId = "1";
-        expect(library.hasBookId(bookId)).toBeTruthy();
+        // noinspection BadExpressionStatementJS
+        expect(library.hasBookId(bookId)).to.be.true;
         const book = library.updateBook(bookId, title, author);
-        expect(typeof(book) === 'object').toBeTruthy();
-        expect(book.id).toBe(Number(bookId));
-        expect(book.author).toBe(author);
-        expect(book.title).toBe(title);
+        expect(book).to.be.an("object");
+        expect(book.id).to.equal(Number(bookId));
+        expect(book.author).to.equal(author);
+        expect(book.title).to.equal(title);
     });
 
 
     it("should be possible to delete an existing book, by numeric id", function() {
         const bookId = 1;
-        expect(library.hasBookId(bookId)).toBeTruthy();
+        // noinspection BadExpressionStatementJS
+        expect(library.hasBookId(bookId)).to.be.true;
         library.deleteBook(bookId);
-        expect(library.hasBookId(bookId)).toBeFalsy();
+        // noinspection BadExpressionStatementJS
+        expect(library.hasBookId(bookId)).to.be.false;
     });
 
 
     it("should be possible to delete an existing book, by string id", function() {
         const bookId = "1";
-        expect(library.hasBookId(bookId)).toBeTruthy();
+        // noinspection BadExpressionStatementJS
+        expect(library.hasBookId(bookId)).to.be.true;
         library.deleteBook(bookId);
-        expect(library.hasBookId(bookId)).toBeFalsy();
+        // noinspection BadExpressionStatementJS
+        expect(library.hasBookId(bookId)).to.be.false;
     });
 
 
