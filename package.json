@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "mocha src/test/test-*.js",
-    "start": "nodemon src/server.js"
+    "start": "node src/server.js",
+    "local": "nodemon src/server.js"
   },
   "author": "",
   "license": "ISC",
