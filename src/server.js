@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const api = require('./api');
 const cors = require('cors');
 const path = require('path');
+const http = require('http');
 const logger = require('./logger');
 const port = process.env.PORT || 3000;
 
@@ -12,4 +13,8 @@ app.use(cors({origin: ['https://editor.swagger.io', 'http://editor.swagger.io', 
 app.use(express.static(path.join(__dirname, 'static')));
 app.use('/api', api);
 
-app.listen(port, () => logger.info(`App listening on port ${port}`));
+
+const server = http.createServer(app);
+server.listen(port, () => logger.info(`Library server is running on ${port}`));
+
+module.exports = server;
