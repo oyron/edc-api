@@ -2,6 +2,7 @@ const {format, createLogger, transports} = require('winston');
 const dateformat = require('dateformat');
 const path = require('path');
 const logLevel = process.env.LOG_LEVEL ? process.env.LOG_LEVEL : 'debug';
+const logToFile = process.env.LOG_TO_FILE;
 
 const levelToUppercaseFormat = format(info => {
     info.level = info.level.toUpperCase();
@@ -32,15 +33,15 @@ const logFileFormat = format.combine(
     commonFormat
 );
 
+const consoleTransport = new transports.Console({format: consoleFormat});
+const fileTransport = new transports.File({
+    filename: path.join(__dirname, 'server.log'),
+    format: logFileFormat
+});
+
 const logger = createLogger({
         level: logLevel,
-        transports: [
-            new transports.Console({format: consoleFormat}),
-            new transports.File({
-                    filename: path.join(__dirname, 'log', 'server.log'),
-                    format: logFileFormat
-                })
-        ]
+        transports: [logToFile ? fileTransport : consoleTransport]
     })
 ;
 
