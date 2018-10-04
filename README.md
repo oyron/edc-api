@@ -127,13 +127,16 @@ Continue working on your current branch, or switch to branch `master` to load a 
 
 **Deployment Procedure Azure CLI**
 
+App name: `library-<user name> (e.g `library-oyron`)`
+Service Plan Name: `Library<User name>SP`
+
 ```
 az login
 az account set --subscription "VanDamme"
-az appservice plan create --name Library<UserName>SP --resource-group APIWorkshop --sku B1 --is-linux --location "North Europe"
-az webapp create --resource-group APIWorkshop --plan Library<UserName>SP --name library-<user name> --runtime "NODE|10.1" --deployment-local-git
-az webapp deployment user set --user-name <username> --password <password>
-git remote add azure <url>
+az appservice plan create --name <service plane name> --resource-group APIWorkshop --sku B1 --is-linux --location "North Europe"
+az webapp create --resource-group APIWorkshop --plan <service plan name> --name <app name> --runtime "NODE|10.1" --deployment-local-git
+az webapp deployment user set --user-name <user name> --password <deployment password>
+git remote add azure https://<user name>@<app name>.scm.azurewebsites.net/<app name>.git
 git push azure master
 
 ```

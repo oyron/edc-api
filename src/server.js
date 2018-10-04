@@ -13,7 +13,6 @@ app.use(cors({origin: ['https://editor.swagger.io', 'http://editor.swagger.io', 
 app.use(express.static(path.join(__dirname, 'static')));
 app.use('/api', api);
 
-
 const server = http.createServer(app);
 server.listen(port, () => logger.info(`Library server is running on ${port}`));
 
