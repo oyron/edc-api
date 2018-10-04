@@ -45,7 +45,6 @@ describe("Library", function() {
         const title = "The Statoil Book";
         const author = "Eldar Sætre";
         const bookId = 1;
-        // noinspection BadExpressionStatementJS
         expect(library.hasBookId(bookId)).to.be.true;
         const book = library.updateBook(bookId, title, author);
         expect(book).to.be.an("object");
@@ -59,7 +58,6 @@ describe("Library", function() {
         const title = "The Statoil Book";
         const author = "Eldar Sætre";
         const bookId = "1";
-        // noinspection BadExpressionStatementJS
         expect(library.hasBookId(bookId)).to.be.true;
         const book = library.updateBook(bookId, title, author);
         expect(book).to.be.an("object");
@@ -71,20 +69,16 @@ describe("Library", function() {
 
     it("should be possible to delete an existing book, by numeric id", function() {
         const bookId = 1;
-        // noinspection BadExpressionStatementJS
         expect(library.hasBookId(bookId)).to.be.true;
         library.deleteBook(bookId);
-        // noinspection BadExpressionStatementJS
         expect(library.hasBookId(bookId)).to.be.false;
     });
 
 
     it("should be possible to delete an existing book, by string id", function() {
         const bookId = "1";
-        // noinspection BadExpressionStatementJS
         expect(library.hasBookId(bookId)).to.be.true;
         library.deleteBook(bookId);
-        // noinspection BadExpressionStatementJS
         expect(library.hasBookId(bookId)).to.be.false;
     });
 

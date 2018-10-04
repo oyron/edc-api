@@ -1,7 +1,7 @@
+process.env.LOG_LEVEL = "error";
 const chai = require('chai');
 const expect = chai.expect;
 const chaiHttp = require('chai-http');
-process.env.LOG_LEVEL = "info";
 const server = require('../server');
 chai.use(chaiHttp);
 
